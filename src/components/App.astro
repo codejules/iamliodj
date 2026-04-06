@@ -1,0 +1,20 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+// Supports weights 200-900
+import '@fontsource-variable/unbounded/wght.css';
+import Header from "@/components/Header.astro";
+import Hero from "@/components/Hero.astro";
+import Work from "@/components/Work.astro";
+import Marquee from "./Marquee.astro";
+---
+
+<Layout>
+    <main>
+        <Header />
+        <Hero />
+        <Marquee />
+        <Work />
+    </main>
+</Layout>
+

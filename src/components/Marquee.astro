@@ -1,0 +1,70 @@
+---
+import Section from "@/layouts/Section.astro";
+
+const items = [
+    { text: "BODAS", highlight: true },
+    { text: "EVENTOS DE EMPRESA" },
+    { text: "FIESTAS PRIVADAS", highlight: true },
+    { text: "POP · INTERNACIONAL · 80S · ELECTRÓNICA · DANCE" },
+    { text: "VALENCIA · ESPAÑA", highlight: true },
+    { text: "+12 AÑOS DE EXPERIENCIA" },
+    {
+        text: "@IAMLIODJ",
+        highlight: true,
+        link: "https://instagram.com/iamliodj",
+    },
+];
+---
+
+<Section>
+    <div class="pt-20">
+        <div
+            class="relative w-full overflow-hidden border-y border-gray-800 bg-[#0b0a0a]"
+        >
+            <!-- fades -->
+            <div
+                class="pointer-events-none absolute left-0 top-0 h-full w-24 z-10 bg-linear-to-r from-[#0b0a0a] to-transparent"
+            >
+            </div>
+            <div
+                class="pointer-events-none absolute right-0 top-0 h-full w-24 z-10 bg-linear-to-l from-[#0b0a0a] to-transparent"
+            >
+            </div>
+
+            <div class="group">
+                <div
+                    id="ticker"
+                    class="flex w-max items-center animate-ticker text-[12px] gap-20 py-5 whitespace-nowrap group-hover:[animation-play-state:paused]"
+                >
+                    {
+                        [...items, ...items].map((item) => (
+                            <>
+                                <span
+                                    class={`${
+                                        item.highlight
+                                            ? "text-white font-semibold"
+                                            : "text-gray-400"
+                                    }`}
+                                >
+                                    {item.link ? (
+                                        <a
+                                            href={item.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            {item.text}
+                                        </a>
+                                    ) : (
+                                        item.text
+                                    )}
+                                </span>
+
+                                <span class="text-gray-600">◆</span>
+                            </>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>

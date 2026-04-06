@@ -1,0 +1,38 @@
+---
+import Section from "@/layouts/Section.astro";
+import Skills from "@/components/Skills.astro";
+
+const paragraphs = [
+  `Soy Julio. DJ de <strong>Bodas y Eventos</strong> con más de 12 años viviendo de lo que más me apasiona. No tengo un estilo fijo, tengo criterio para leer lo que necesita cada evento en cada momento.`,
+  `<strong>Pop, electrónica, internacional, reggaetón, 80s, electro latino</strong>: no soy un DJ de un solo estilo porque la vida tampoco lo es. Me tomo tu evento tan en serio como si fuera el mío. Porque sé que ese día solo ocurre una vez.`,
+];
+---
+
+<Section>
+  <div class="grid grid-cols-1 md:grid-cols-2 items-start mt-26 mx-auto max-w-10xl px-6 md:px-10 gap-12">
+    
+    <div class="uppercase">
+      <h1 class="flex flex-col gap-4 text-3xl md:text-5xl lg:text-6xl">
+        <span class="text-white">el trabajo</span>
+        <span class="text-gray-400">que hago.</span>
+      </h1>
+    </div>
+
+    <div class="flex flex-col text-white gap-10">
+      
+      <h2 class="text-xl md:text-2xl">
+        No pincho canciones. Creo momentos.
+      </h2>
+
+      {paragraphs.map((text) => (
+        <p
+          class="text-base md:text-lg text-gray-400 max-w-xl leading-relaxed"
+          set:html={text}
+        />
+      ))}
+
+    </div>
+  </div>
+
+  <Skills />
+</Section>

@@ -1,0 +1,24 @@
+---
+const LOGO = [
+    {
+        src: `/logo.svg`,
+        alt: "Lio DJ - DJ Bodas y Eventos",
+        title: "logo Lio DJ - DJ Bodas y Eventos",
+    },
+];
+---
+
+<picture>
+    <a>
+        <figure>
+            <img
+                src={LOGO[0].src}
+                alt={LOGO[0].alt}
+                title={LOGO[0].title}
+                fetchpriority="high"
+                loading="eager"
+                class="w-50"
+            />
+        </figure>
+    </a>
+</picture>

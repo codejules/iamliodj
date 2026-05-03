@@ -1,0 +1,17 @@
+<svg viewBox="0 0 560 280" width="560" height="280" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;display=swap');</style>
+  <clipPath id="top"><rect x="0" y="0" width="560" height="148"/></clipPath>
+  <clipPath id="bot"><rect x="0" y="148" width="560" height="132"/></clipPath>
+</defs>
+<rect width="560" height="280" fill="#0A0808"/>
+<g clip-path="url(#top)">
+  <text x="292" y="232" text-anchor="middle" fill="#FF375F"
+    font-family="'Bebas Neue',Impact,sans-serif" font-size="230" letter-spacing="8">LIO</text>
+</g>
+<g clip-path="url(#bot)">
+  <text x="268" y="232" text-anchor="middle" fill="white"
+    font-family="'Bebas Neue',Impact,sans-serif" font-size="230" letter-spacing="8">LIO</text>
+</g>
+<line x1="0" y1="148" x2="560" y2="148" stroke="#0A0808" stroke-width="3"/>
+</svg>

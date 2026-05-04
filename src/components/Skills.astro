@@ -3,12 +3,12 @@ const items = [
   {
     number: "1",
     title: "CRITERIO",
-    text: "Doce años leyendo públicos, gestionando momentos y sabiendo cuándo subir, cuándo bajar y cuándo romper la pista. Eso no se aprende, se vive evento a evento.",
+    text: "Desde 2012 leyendo públicos, gestionando momentos y sabiendo cuándo subir, cuándo bajar y cuándo romper la pista. Eso no se aprende, se vive evento a evento.",
   },
   {
     number: "2",
     title: "VERSATILIDAD",
-    text: "Pop internacional, 80s, pop español, electro latino, reggaetón, electrónica y dance. Me adapto a cada momento del evento sin que nadie tenga que pedírmelo.",
+    text: "Pop internacional, 80s, pop español, electro latino, reggaetón, electrónica y dance. Me adapto a cada tipo de evento para crear la atmósfera perfecta.",
   },
   {
     number: "3",
@@ -18,27 +18,30 @@ const items = [
 ];
 ---
 
-<div class="grid md:grid-cols-2 lg:grid-cols-[repeat(3,1fr)] my-10 text-white border-y border-gray-800">
-  {items.map((item, i) => (
-    <div
-      class={`group relative flex flex-col py-4 gap-4 md:gap-8 px-4 md:p-10 transition-all duration-500 ease-out
+<div
+  class="grid md:grid-cols-2 lg:grid-cols-[repeat(3,1fr)] my-10 text-white border-y border-gray-800"
+>
+  {
+    items.map((item, i) => (
+      <div
+        class={`group relative flex flex-col py-4 gap-4 md:gap-8 px-4 md:p-10 transition-all duration-500 ease-out
       hover:-translate-y-2 hover:bg-gray-800/40 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)]
       ${i !== 0 && i !== items.length - 1 ? "border-x border-gray-800" : ""}`}
-    >
-      <div class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-linear-to-br from-white/5 via-transparent to-transparent"></div>
+      >
+        <div class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 bg-linear-to-br from-white/5 via-transparent to-transparent" />
 
-      <span class="text-gray-500 text-xl md:text-4xl lg:text-6xl transition duration-300 group-hover:text-white/70">
-        {item.number}
-      </span>
+        <span class="text-gray-500 text-xl md:text-4xl lg:text-6xl transition duration-300 group-hover:text-white/70">
+          {item.number}
+        </span>
 
-      <h3 class="transition duration-300 group-hover:text-white">
-        {item.title}
-      </h3>
+        <h3 class="transition duration-300 group-hover:text-white">
+          {item.title}
+        </h3>
 
-      <p class="text-base text-gray-400 transition duration-300 group-hover:text-gray-300">
-        {item.text}
-      </p>
-
-    </div>
-  ))}
+        <p class="text-base text-gray-400 transition duration-300 group-hover:text-gray-300">
+          {item.text}
+        </p>
+      </div>
+    ))
+  }
 </div>

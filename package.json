@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fontsource-variable/unbounded": "^5.2.8",
+    "@splidejs/splide": "^4.1.4",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.2.1",
     "netlify-cli": "^24.8.1",

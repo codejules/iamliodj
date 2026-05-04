@@ -1,5 +1,17 @@
 ---
-import { Image } from 'astro:assets';
-import heroBackground from '../assets/bg-hero.webp';
+import { Image } from "astro:assets";
+import heroBackground from "../assets/bg-hero.webp";
 ---
-<Image src={heroBackground} alt="DJ Lio en acción" title="boda dj lio fiesta" class="w-full h-screen object-cover absolute" />
+
+<Image
+    src={heroBackground}
+    alt="DJ Julio en acción"
+    class="w-full h-full object-cover absolute inset-0"
+    priority
+/>
+
+<div
+    class="absolute bottom-0 left-0 w-full h-40 md:h-64
+              bg-linear-to-t from-black via-black/70 to-transparent"
+>
+</div>

@@ -1,5 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import logoLio from '../assets/logo.svg';
+import logoLio from "@/assets/logo.webm";
 ---
-<Image src={logoLio} alt="Logo Lio DJ" title="Logo Lio DJ" class="absolute inset-0 w-25 md:w-50" />
+
+<video
+    src={logoLio}
+    autoplay
+    muted
+    loop
+    playsinline
+    class="w-32 h-auto z-1 fixed"></video>

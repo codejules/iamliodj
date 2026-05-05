@@ -12,6 +12,7 @@ export function initSplide() {
             perPage: 4,
             width: "100%",
             arrows: false,
+            pagination: false,
             autoScroll: {
                 speed: 1,
             },

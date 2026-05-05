@@ -1,5 +1,17 @@
 ---
 import Section from "@/layouts/Section.astro";
+import { Image } from "astro:assets";
+
+import img1 from "@/assets/gallery/liodj.webp";
+import img2 from "@/assets/gallery/liodj2.webp";
+import img3 from "@/assets/gallery/liodj3.webp";
+import img4 from "@/assets/gallery/liodj4.webp";
+import img5 from "@/assets/gallery/liodj5.webp";
+
+const images = [img1, img2, img3, img4, img5];
+const paragraphs = [
+    `Desde bodas elegantes hasta eventos de empresa o fiestas privadas, el objetivo es siempre el mismo: que la música sea el hilo conductor de una noche inolvidable.`,
+];
 ---
 
 <Section>
@@ -17,76 +29,66 @@ import Section from "@/layouts/Section.astro";
             <h2 class="text-xl md:text-2xl">
                 Eventos que hablan por sí solos.
             </h2>
+            {
+                paragraphs.map((text) => (
+                    <p
+                        class="text-base text-gray-400 max-w-xl leading-relaxed"
+                        set:html={text}
+                    />
+                ))
+            }
         </div>
     </div>
     <div class="w-full">
         <section
             id="image-carousel"
             class="splide"
-            aria-label="Beautiful Images"
+            aria-label="Galería de eventos DJ"
         >
-            <div class="splide__track">
+            <div class="splide__track my-2 md:my-10">
                 <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img
-                            src="https://picsum.photos/seed/picsum/200/300.webp"
-                            alt=""
-                        />
-                    </li>
-                    <li class="splide__slide">
-                        <img
-                            src="https://picsum.photos/seed/picsum/200/300.webp"
-                            alt=""
-                        />
-                    </li>
-                    <li class="splide__slide">
-                        <img
-                            src="https://picsum.photos/seed/picsum/200/300.webp"
-                            alt=""
-                        />
-                    </li>
-                    <li class="splide__slide">
-                        <img
-                            src="https://picsum.photos/seed/picsum/200/300.webp"
-                            alt=""
-                        />
-                    </li>
-                    <li class="splide__slide">
-                        <img
-                            src="https://picsum.photos/seed/picsum/200/300.webp"
-                            alt=""
-                        />
-                    </li>
+                    {
+                        images.map((img, i) => (
+                            <li class="splide__slide">
+                                <Image
+                                    src={img}
+                                    alt={`Evento DJ ${i + 1}`}
+                                    class="rounded-lg w-full h-full object-cover"
+                                    loading="lazy"
+                                />
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
         </section>
-    </div>
-</Section>
 
-<script>
-    import { initSplide } from "@/types/initSplide";
-    import { openModal, closeModal } from "@/types/openModal";
+        <script>
+            import { initSplide } from "@/types/initSplide";
+            import { openModal, closeModal } from "@/types/openModal";
 
-    initSplide();
+            initSplide();
 
-    const modal = document.getElementById("image-modal");
-    if (modal) {
-        modal.addEventListener("click", () => closeModal());
-    }
-</script>
+            const modal = document.getElementById("image-modal");
+            if (modal) {
+                modal.addEventListener("click", () => closeModal());
+            }
+        </script>
 
-<style>
-    .splide {
-        margin: 0 auto;
-        max-width: 800px;
-    }
+        <style>
+            .splide {
+                margin: 0 auto;
+                max-width: 800px;
+            }
 
-    :global(.splide__pagination) {
-        display: none;
-    }
-    :global(.splide__slide img) {
-        height: 350px;
-        object-fit: cover;
-        width: 100%;
-    }
-</style>
+            :global(.splide__pagination) {
+                display: none;
+            }
+            :global(.splide__slide img) {
+                height: 350px;
+                object-fit: cover;
+                width: 100%;
+            }
+        </style>
+    </div></Section
+>

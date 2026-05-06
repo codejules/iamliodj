@@ -1,11 +1,12 @@
 ---
-import logoLio from "@/assets/logo.webm";
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.svg";
 ---
 
-<video
-    src={logoLio}
-    autoplay
-    muted
-    loop
-    playsinline
-    class="w-32 h-auto z-1 fixed"></video>
+<Image
+    src={logo}
+    alt="Logo Lio DJ"
+    class="fixed z-1 md:w-48 w-24 p-4 md:p-10"
+    decoding="async"
+    loading="lazy"
+/>

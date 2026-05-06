@@ -12,7 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fontsource-variable/unbounded": "^5.2.8",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/space-grotesk": "^5.2.10",
     "@splidejs/splide": "^4.1.4",
     "@splidejs/splide-extension-auto-scroll": "^0.5.3",
     "@tailwindcss/vite": "^4.2.2",

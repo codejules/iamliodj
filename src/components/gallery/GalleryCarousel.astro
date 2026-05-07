@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+    images: ImageMetadata[];
+    label?: string;
+}
+
+const { images, label = "Galería de imágenes" } = Astro.props;
+---
+
+<div class="w-full">
+    <section
+        id="image-carousel"
+        class="splide"
+        aria-label={label}
+    >
+        <div class="splide__track my-2 md:my-10">
+            <ul class="splide__list">
+                {images.map((img, i) => (
+                    <li class="splide__slide">
+                        <Image
+                            src={img}
+                            alt={`${label} ${i + 1}`}
+                            class="rounded-lg w-full h-full object-cover"
+                            loading={i === 0 ? "eager" : "lazy"}
+                            decoding={i === 0 ? "sync" : "async"}
+                        />
+                    </li>
+                ))}
+            </ul>
+        </div>
+    </section>
+</div>
+
+<!-- Script diferido: no bloquea el hilo principal -->
+<script>
+    import { initSplide } from "@/types/initSplide";
+    import { closeModal } from "@/types/openModal";
+
+    // Espera a que el DOM esté listo sin bloquear el render
+    document.addEventListener("DOMContentLoaded", () => {
+        initSplide();
+
+        document
+            .getElementById("image-modal")
+            ?.addEventListener("click", closeModal);
+    });
+</script>
+
+<style>
+    .splide {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    :global(.splide__pagination) {
+        display: none;
+    }
+
+    :global(.splide__slide img) {
+        height: 350px;
+        object-fit: cover;
+        width: 100%;
+    }
+</style>

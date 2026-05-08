@@ -1,0 +1,34 @@
+---
+interface Props {
+    label: string;
+    display: string;
+    href: string;
+    position?: "top" | "middle" | "bottom";
+}
+
+const { label, display, href, position = "middle" } = Astro.props;
+
+const borderMap = {
+    top: "border-t border-gray-600",
+    middle: "border-y border-gray-600",
+    bottom: "border-b border-gray-600",
+};
+
+const isExternal = href.startsWith("http");
+---
+
+<a
+    href={href}
+    target={isExternal ? "_blank" : undefined}
+    rel={isExternal ? "noopener noreferrer" : undefined}
+    class="group"
+>
+    <div class:list={["py-8 w-full gap-2 flex flex-col", borderMap[position]]}>
+        <p class="text-gray-600 text-lg">{label}</p>
+        <p
+            class="uppercase tracking-[.125rem] font-bold transition-colors duration-500 group-hover:text-purple-700"
+        >
+            {display}
+        </p>
+    </div>
+</a>

@@ -1,0 +1,38 @@
+---
+const links = [
+    { href: "#work", label: "Sobre mi" },
+    { href: "#events", label: "Servicios" },
+    { href: "#contact", label: "Contacto" },
+    {
+        href: "https://www.instagram.com/iamliodj",
+        label: "Instagram",
+        external: true,
+    },
+];
+const year = new Date().getFullYear();
+const copyrightYear = year;
+---
+
+<footer class="border-t border-gray-700 py-6 mt-12 px-4 md:px-10">
+    <div class="flex flex-col items-center md:flex-row md:justify-between">
+        <div>
+            <p class="uppercase text-gray-500 text-[12px] tracking-[0.125rem]">
+                &copy; {copyrightYear} iamliodj · Valencia · España
+            </p>
+        </div>
+        <nav class="hidden md:flex md:gap-6">
+            {
+                links.map(({ href, label, external }) => (
+                    <a
+                        href={href}
+                        target={external ? "_blank" : undefined}
+                        rel={external ? "noopener noreferrer" : undefined}
+                        class="text-gray-400 duration-500 hover:text-white text-[12px] uppercase"
+                    >
+                        {label}
+                    </a>
+                ))
+            }
+        </nav>
+    </div>
+</footer>

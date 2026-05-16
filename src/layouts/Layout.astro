@@ -1,18 +1,19 @@
+---
+const title = "Lio DJ - DJ de Bodas y Eventos";
+const description =
+	"DJ profesional para bodas, eventos y fiestas privadas. Música, energía y una experiencia única para hacer inolvidable cada momento.";
+---
+
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<link
-			href="
-https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
-"
-			rel="stylesheet"
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>Lio DJ - DJ Bodas y Eventos</title>
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body class="bg-[#0b0a0a]">
 		<slot />
